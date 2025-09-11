@@ -1,5 +1,11 @@
+import os
 import requests
-from config import API_KEY, BASE_URL
+from dotenv import load_dotenv
+
+load_dotenv()
+
+API_KEY = os.getenv("API_KEY")
+BASE_URL = os.getenv("BASE_URL")
 
 def get_weather(city: str):
     params = {

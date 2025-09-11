@@ -6,8 +6,8 @@ __pycache__/
 .streamlit/
 
 # Ignore environment files
-.env
 config.py
+.env
 
 # Ignore Json File
 favorites.json
