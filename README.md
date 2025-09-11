@@ -81,6 +81,7 @@ WeatherApp/
 
    ```python
    API_KEY = "YOUR_API_KEY_HERE"
+   BASE_URL = "YOUR_BASE_URL"
    ```
 
    > Make sure `config.py` is added to `.gitignore` to protect your API key.
