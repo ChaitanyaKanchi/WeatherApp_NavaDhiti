@@ -1,4 +1,5 @@
-# Card styling 
+# Card styling
+
 .card {
     background: #ffffff;
     padding: 20px;
@@ -11,6 +12,7 @@
 }
 
 # weather header styling
+
 .weather-header {
     font-size: 18px;
     font-weight: bold;
