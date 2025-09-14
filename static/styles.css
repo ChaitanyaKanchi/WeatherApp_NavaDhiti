@@ -1,5 +1,3 @@
-# CardStyling
-
 .card {
     background: #ffffff;
     padding: 20px;
@@ -10,8 +8,6 @@
     font-family: "Arial", sans-serif;
     color: #000000;
 }
-
-# weatherHeaderStyling
 
 .weather-header {
     font-size: 18px;
