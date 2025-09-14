@@ -1,7 +1,8 @@
 """
 Weather API Utility
 
-This module provides a function to fetch weather information for a given city using the OpenWeatherMap API.
+This module provides a function to fetch weather information for a given city
+using the OpenWeatherMap API.
 
 Tech stack:
 - Python
@@ -12,6 +13,7 @@ Tech stack:
 import os
 import requests
 from dotenv import load_dotenv
+from requests.exceptions import RequestException, Timeout
 
 # Load environment variables
 load_dotenv()
@@ -65,6 +67,6 @@ def get_weather(city: str) -> dict:
         # Error from API
         return {"error": data.get("message", "Unable to fetch weather.")}
 
-    except Exception as e:
+    except (RequestException, Timeout) as e:
         # Handle request or connection errors
         return {"error": str(e)}

@@ -77,7 +77,7 @@ WeatherApp/
 
 5. Add your API key:
 
-   Create `config.py` in the project root:
+   Create `.env` file in the project root:
 
    ```python
    API_KEY = "YOUR_API_KEY_HERE"

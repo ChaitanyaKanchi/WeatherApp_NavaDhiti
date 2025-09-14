@@ -20,8 +20,8 @@ st.set_page_config(
 )
 
 # Load custom CSS for styling
-with open("static/styles.css", encoding="utf-8") as f:
-    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+with open("static/styles.css", encoding="utf-8") as css_file:
+    st.markdown(f"<style>{css_file.read()}</style>", unsafe_allow_html=True)
 
 st.title("Weather App")
 
@@ -36,8 +36,8 @@ def load_favorites():
         list: List of favorite city names.
     """
     if os.path.exists(FAV_FILE):
-        with open(FAV_FILE, "r", encoding="utf-8") as f:
-            return json.load(f)
+        with open(FAV_FILE, "r", encoding="utf-8") as fav_file:
+            return json.load(fav_file)
     return []
 
 
@@ -47,8 +47,8 @@ def save_favorites(fav_list):
     Args:
         fav_list (list): List of favorite city names.
     """
-    with open(FAV_FILE, "w", encoding="utf-8") as f:
-        json.dump(fav_list, f)
+    with open(FAV_FILE, "w", encoding="utf-8") as fav_file:
+        json.dump(fav_list, fav_file)
 
 
 # Initialize session state
@@ -115,8 +115,8 @@ with tab2:
                             f"""
                             <div class="card">
                                 <div class="weather-header">{w['city']}</div>
-                                🌡️ {w['temperature']} °C  
-                                💧 {w['humidity']}%  
+                                🌡️ {w['temperature']} °C
+                                💧 {w['humidity']}%
                                 🌥️ {w['condition']}
                             </div>
                             """,
@@ -141,8 +141,8 @@ with tab3:
                         f"""
                         <div class="card">
                             <div class="weather-header">{weather['city']}</div>
-                            🌡️ {weather['temperature']} °C  
-                            💧 {weather['humidity']}%  
+                            🌡️ {weather['temperature']} °C
+                            💧 {weather['humidity']}%
                             🌥️ {weather['condition']}
                         </div>
                         """,
@@ -159,6 +159,6 @@ with tab3:
                         st.session_state["dummy"] = (
                             st.session_state.get("dummy", 0) + 1
                         )
-                        st.experimental_rerun()
+                        st.rerun()
     else:
         st.info("No favorites saved yet. Add some from the Single City tab.")
