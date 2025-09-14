@@ -70,17 +70,14 @@ with tab1:
                 st.error(weather["error"])
             else:
                 st.session_state["last_weather"] = weather
-                st.markdown(
-                    f"""
-                    <div class="card">
-                        <div class="weather-header">{weather['city']}</div>
-                        🌡️ Temperature: {weather['temperature']} °C  
-                        💧 Humidity: {weather['humidity']}%  
-                        🌥️ Condition: {weather['condition']}
-                    </div>
-                    """,
-                    unsafe_allow_html=True,
-                )
+                st.markdown(f"""
+<div class="card">
+<div class="weather-header">{weather['city']}</div>
+🌡️ Temperature: {weather['temperature']} °C
+💧 Humidity: {weather['humidity']}%
+🌥️ Condition: {weather['condition']}
+</div>
+""", unsafe_allow_html=True)
 
     # Add last searched city to favorites
     if "last_weather" in st.session_state:
